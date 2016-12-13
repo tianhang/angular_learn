@@ -1,8 +1,28 @@
-var app = angular.module("myApp",[]);
-app.controller("myCtrl",function() {
-	// body...
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  // body...
+  $scope.products = [{
+    name: "Apples",
+    category: "Fruit",
+    price: 1.20,
+    expiry: 10
+  }, {
+    name: "Bananas",
+    category: "Fruit",
+    price: 2.42,
+    expiry: 7
+  }, {
+    name: "Pears",
+    category: "Fruit",
+    price: 2.02,
+    expiry: 6
+  }];
 });
 
-app.directive("dirDemo",function(){
-	
+app.directive("unorderedList", function() {
+	return function(scope,element,attrs){
+		console.log(scope,element,attrs);
+		var data = attrs["unorderedList"];
+		console.table(data);
+	}
 });
