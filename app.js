@@ -18,11 +18,15 @@ app.controller("myCtrl", function($scope) {
     expiry: 6
   }];
 });
-
 app.directive("unorderedList", function() {
-	return function(scope,element,attrs){
-		console.log(scope,element,attrs);
-		var data = attrs["unorderedList"];
-		console.table(data);
-	}
+  return {
+    link: function(scope, element, attrs) {
+      console.log(scope);
+      console.log(element);
+      console.log(attrs);
+      var data = attrs["unorderedList"];
+      //console.table(data);
+    },
+    template:"<div class='panel-body'>Name: <input ng-model='name' /></div>",
+  }
 });

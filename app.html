@@ -1,9 +1,16 @@
+<script type='text/ng-template' id='tpl'>
+ <div class="list-group-item">
+    <h3>Hello <em class="pull-right">Brother</em></h3>
+</div>
+</script>
+
 <html ng-app="myApp">
 <head>
 	<script type="text/javascript" src="./angular.min.js"></script>
 	<script type="text/javascript" src="./app.js"></script>
 </head>
 <body ng-controller="myCtrl">
-	<div unordered-list="{{products}}"></div>
+	<div unordered-list="{{products}}" list-source="products" ></div>
+	<div unordered-list="{{products}}" list-source="products" ></div>
 </body>
 </html>
